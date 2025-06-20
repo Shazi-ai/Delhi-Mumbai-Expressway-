@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Mumbai Expressway - Complete Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/delhi_mumbai_expressway_aerial_1.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .stats-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stats-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .toll-calculator {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(30, 64, 175, 0.25);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .route-map {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .toll-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        .table td {
+            padding: 1rem;
+            border-color: var(--border-color);
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .amenity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .amenity-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .amenity-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .amenity-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .timeline-date {
+                left: 20px;
+                transform: translateY(-50%);
+            }
+        }
+
+        .loading {
+            display: none;
+        }
+
+        .result {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-img {
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-road"></i> Delhi Mumbai Expressway
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#route">Route</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tolls">Tolls</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#amenities">Amenities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tools">Tools</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">Delhi Mumbai Expressway</h1>
+                <p class="hero-subtitle">India's Longest Access-Controlled Expressway - Connecting Two Megacities</p>
+                
+                <div class="row mt-5">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stats-card">
+                            <span class="stats-number">1,350</span>
+                            <div class="stats-label">Kilometers Long</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stats-card">
+                            <span class="stats-number">12</span>
+                            <div class="stats-label">Hours Travel Time</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stats-card">
+                            <span class="stats-number">6</span>
+                            <div class="stats-label">States Connected</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stats-card">
+                            <span class="stats-number">93</span>
+                            <div class="stats-label">Wayside Amenities</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3 class="feature-title">About the Expressway</h3>
+                        <p class="feature-description">
+                            The Delhi-Mumbai Expressway is a monumental infrastructure project spanning 1,350 km, 
+                            designed to connect India's capital with its financial hub. This 8-lane expressway 
+                            (expandable to 12 lanes) significantly reduces travel time from 24 hours to just 12 hours.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Project Timeline</h3>
+                        <p class="feature-description">
+                            Construction began with the foundation stone laid in March 2019. The project is expected 
+                            to be fully operational by 2027, with several sections already open to traffic. 
+                            The total project value is around ₹1,00,000 crores (~US$13.1 billion).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="feature-title">Environmental Features</h3>
+                        <p class="feature-description">
+                            The expressway includes over 2,000 water recharge points, extensive tree plantations, 
+                            animal overpasses for wildlife protection, and India's first dedicated electric lane 
+                            for EV trucks and buses.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Safety & Technology</h3>
+                        <p class="feature-description">
+                            Advanced safety features include surveillance cameras, well-designed road markings, 
+                            state-of-the-art toll plazas, and modern traffic management systems to ensure 
+                            a safe and efficient driving experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Route Section -->
+    <section id="route" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Route Information</h2>
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="route-map">
+                        <img src="images/delhi_mumbai_expressway_route_map_1.webp" alt="Delhi Mumbai Expressway Route Map" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <h3 class="feature-title">States Covered</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Delhi (12 km)</li>
+                            <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Haryana (129 km)</li>
+                            <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Rajasthan (373 km)</li>
+                            <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Madhya Pradesh (244 km)</li>
+                            <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Gujarat (426 km)</li>
+                            <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Maharashtra (171 km)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card mt-4">
+                        <h3 class="feature-title">Major Cities</h3>
+                        <p class="feature-description">
+                            Delhi, Gurgaon, Sohna, Alwar, Dausa, Kota, Ratlam, Vadodara, Surat, Virar, Mumbai
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction Timeline -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Construction Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Foundation Stone Laid</h4>
+                        <p>Project foundation stone laid by Union Minister Nitin Gadkari in the presence of senior officials.</p>
+                    </div>
+                    <div class="timeline-date">March 2019</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Sohna-Dausa Section Opens</h4>
+                        <p>First major section of 1,015 km becomes operational, marking a significant milestone.</p>
+                    </div>
+                    <div class="timeline-date">Feb 2023</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Dausa-Sawai Madhopur Opens</h4>
+                        <p>Additional sections including Bhanpura Interchange-Thandla Interchange become operational.</p>
+                    </div>
+                    <div class="timeline-date">Oct 2023</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Vadodara-Bharuch Section</h4>
+                        <p>Important Gujarat section opens, improving connectivity in the western region.</p>
+                    </div>
+                    <div class="timeline-date">Feb 2024</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Kota-Laban Section</h4>
+                        <p>Latest section to become operational, further extending the expressway network.</p>
+                    </div>
+                    <div class="timeline-date">Dec 2024</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Full Completion Expected</h4>
+                        <p>Entire expressway expected to be fully operational, connecting Delhi to Mumbai.</p>
+                    </div>
+                    <div class="timeline-date">2027</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toll Section -->
+    <section id="tolls" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Toll Information</h2>
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="toll-table">
+                        <table class="table table-striped mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Toll Plaza</th>
+                                    <th>Light Vehicle (₹)</th>
+                                    <th>Light Commercial Vehicle (₹)</th>
+                                    <th>Heavy Vehicle (₹)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Khalilpur</strong></td>
+                                    <td>90</td>
+                                    <td>145</td>
+                                    <td>3,215</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Barkapara</strong></td>
+                                    <td>500</td>
+                                    <td>805</td>
+                                    <td>3,215</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dausa</strong></td>
+                                    <td>460</td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Samsabad</strong></td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shital</strong></td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-3">
+                        <small class="text-muted">
+                            <i class="fas fa-info-circle me-1"></i>
+                            TBD = To Be Determined. Toll rates are subject to change and may vary based on distance traveled.
+                        </small>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3 class="feature-title">Payment Methods</h3>
+                        <p class="feature-description">
+                            Toll payments can be made through FASTag for automatic deductions. 
+                            Link your FASTag to various payment platforms for a seamless journey.
+                        </p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i> FASTag</li>
+                            <li><i class="fas fa-check text-success me-2"></i> UPI Payments</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Credit/Debit Cards</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Net Banking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Wayside Amenities</h2>
+            <p class="text-center text-muted mb-5">
+                The expressway features 93 wayside amenities providing world-class facilities for travelers
+            </p>
+            
+            <div class="amenity-grid">
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4>Food Courts & Restaurants</h4>
+                    <p>Multi-cuisine restaurants, food courts, and traditional dhabas</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h4>Fuel Stations</h4>
+                    <p>24/7 fuel stations with petrol, diesel, and CNG facilities</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <h4>EV Charging Stations</h4>
+                    <p>Electric vehicle charging points for sustainable travel</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h4>Hotels & Rest Areas</h4>
+                    <p>Comfortable accommodation and rest facilities</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>Medical Clinics</h4>
+                    <p>24/7 medical facilities and emergency services</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>Repair Shops</h4>
+                    <p>Minor vehicle repair and maintenance services</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h4>ATMs & Banking</h4>
+                    <p>ATM facilities and banking services</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-restroom"></i>
+                    </div>
+                    <h4>Clean Restrooms</h4>
+                    <p>Hygienic and well-maintained restroom facilities</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_amenity_1.jpg" alt="Expressway Amenities" class="img-fluid gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_amenity_2.jpg" alt="Wayside Facilities" class="img-fluid gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_toll_1.jpg" alt="Toll Plaza" class="img-fluid gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Interactive Tools</h2>
+            
+            <!-- Toll Calculator -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="toll-calculator">
+                        <h3 class="text-center mb-4">
+                            <i class="fas fa-calculator me-2"></i>
+                            Toll Calculator
+                        </h3>
+                        <form id="tollCalculator">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="fromLocation" class="form-label">From</label>
+                                    <select class="form-control" id="fromLocation" required>
+                                        <option value="">Select Starting Point</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="sohna">Sohna</option>
+                                        <option value="dausa">Dausa</option>
+                                        <option value="kota">Kota</option>
+                                        <option value="vadodara">Vadodara</option>
+                                        <option value="surat">Surat</option>
+                                        <option value="mumbai">Mumbai</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="toLocation" class="form-label">To</label>
+                                    <select class="form-control" id="toLocation" required>
+                                        <option value="">Select Destination</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="sohna">Sohna</option>
+                                        <option value="dausa">Dausa</option>
+                                        <option value="kota">Kota</option>
+                                        <option value="vadodara">Vadodara</option>
+                                        <option value="surat">Surat</option>
+                                        <option value="mumbai">Mumbai</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="vehicleType" class="form-label">Vehicle Type</label>
+                                    <select class="form-control" id="vehicleType" required>
+                                        <option value="">Select Vehicle</option>
+                                        <option value="light">Light Vehicle (Car/Jeep)</option>
+                                        <option value="commercial">Light Commercial Vehicle</option>
+                                        <option value="heavy">Heavy Vehicle (Truck/Bus)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-calculator me-2"></i>
+                                    Calculate Toll
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div id="tollResult" class="result">
+                            <h4 class="text-center text-success">
+                                <i class="fas fa-check-circle me-2"></i>
+                                Calculation Result
+                            </h4>
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <div class="feature-card">
+                                        <h5>Distance</h5>
+                                        <p id="resultDistance" class="text-primary fs-4 fw-bold">-</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-card">
+                                        <h5>Estimated Toll</h5>
+                                        <p id="resultToll" class="text-success fs-4 fw-bold">-</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-card">
+                                        <h5>Travel Time</h5>
+                                        <p id="resultTime" class="text-info fs-4 fw-bold">-</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Route Planner -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="toll-calculator">
+                        <h3 class="text-center mb-4">
+                            <i class="fas fa-route me-2"></i>
+                            Route Planner
+                        </h3>
+                        <form id="routePlanner">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="startPoint" class="form-label">Starting Point</label>
+                                    <input type="text" class="form-control" id="startPoint" placeholder="Enter starting location" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="endPoint" class="form-label">Destination</label>
+                                    <input type="text" class="form-control" id="endPoint" placeholder="Enter destination" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="travelDate" class="form-label">Travel Date</label>
+                                    <input type="date" class="form-control" id="travelDate" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="travelTime" class="form-label">Preferred Time</label>
+                                    <input type="time" class="form-control" id="travelTime" required>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-map-marked-alt me-2"></i>
+                                    Plan Route
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div id="routeResult" class="result">
+                            <h4 class="text-center text-success">
+                                <i class="fas fa-check-circle me-2"></i>
+                                Route Information
+                            </h4>
+                            <div id="routeDetails" class="mt-3">
+                                <!-- Route details will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_aerial_1.jpg" alt="Aerial View 1" class="img-fluid gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_aerial_2.jpg" alt="Aerial View 2" class="img-fluid gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_aerial_3.jpg" alt="Aerial View 3" class="img-fluid gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_toll_2.jpg" alt="Toll Plaza 2" class="img-fluid gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_toll_3.jpg" alt="Toll Plaza 3" class="img-fluid gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/delhi_mumbai_expressway_route_map_2.png" alt="Route Map" class="img-fluid gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="footer-title">Delhi Mumbai Expressway</h3>
+                    <p class="text-muted">
+                        India's longest access-controlled expressway connecting the national capital 
+                        to the financial capital, revolutionizing inter-city travel.
+                    </p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#overview" class="footer-link">Overview</a></li>
+                        <li><a href="#route" class="footer-link">Route</a></li>
+                        <li><a href="#tolls" class="footer-link">Tolls</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h4 class="footer-title">Information</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#amenities" class="footer-link">Amenities</a></li>
+                        <li><a href="#tools" class="footer-link">Tools</a></li>
+                        <li><a href="#" class="footer-link">Safety</a></li>
+                        <li><a href="#" class="footer-link">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">Contact Information</h4>
+                    <p class="text-muted">
+                        <i class="fas fa-phone me-2"></i> Toll-Free: 1800-XXX-XXXX<br>
+                        <i class="fas fa-envelope me-2"></i> info@delhimumbaiexpressway.in<br>
+                        <i class="fas fa-globe me-2"></i> www.nhai.gov.in
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">
+                        © 2025 Delhi Mumbai Expressway. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-0">
+                        Developed by NHAI | Government of India
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Enhanced Interactive Tools -->
+    <script src="enhanced-tools.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Toll Calculator
+        document.getElementById('tollCalculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const from = document.getElementById('fromLocation').value;
+            const to = document.getElementById('toLocation').value;
+            const vehicleType = document.getElementById('vehicleType').value;
+            
+            if (!from || !to || !vehicleType) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            if (from === to) {
+                alert('Starting point and destination cannot be the same');
+                return;
+            }
+            
+            // Sample calculation logic
+            const distances = {
+                'delhi-sohna': 60,
+                'sohna-dausa': 200,
+                'dausa-kota': 150,
+                'kota-vadodara': 400,
+                'vadodara-surat': 150,
+                'surat-mumbai': 300,
+                'delhi-mumbai': 1350
+            };
+            
+            const tollRates = {
+                light: 2.5,
+                commercial: 4.0,
+                heavy: 8.0
+            };
+            
+            // Calculate distance
+            let distance = 0;
+            const routeKey = `${from}-${to}`;
+            const reverseKey = `${to}-${from}`;
+            
+            if (distances[routeKey]) {
+                distance = distances[routeKey];
+            } else if (distances[reverseKey]) {
+                distance = distances[reverseKey];
+            } else {
+                // Estimate based on position
+                const positions = {
+                    delhi: 0, sohna: 60, dausa: 260, kota: 410,
+                    vadodara: 810, surat: 960, mumbai: 1350
+                };
+                distance = Math.abs(positions[to] - positions[from]);
+            }
+            
+            const toll = Math.round(distance * tollRates[vehicleType]);
+            const time = Math.round(distance / 100 * 60); // Assuming 100 km/h average speed
+            
+            // Display results
+            document.getElementById('resultDistance').textContent = `${distance} km`;
+            document.getElementById('resultToll').textContent = `₹${toll}`;
+            document.getElementById('resultTime').textContent = `${Math.floor(time/60)}h ${time%60}m`;
+            document.getElementById('tollResult').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('tollResult').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
+
+        // Route Planner
+        document.getElementById('routePlanner').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const startPoint = document.getElementById('startPoint').value;
+            const endPoint = document.getElementById('endPoint').value;
+            const travelDate = document.getElementById('travelDate').value;
+            const travelTime = document.getElementById('travelTime').value;
+            
+            if (!startPoint || !endPoint || !travelDate || !travelTime) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Generate route information
+            const routeDetails = `
+                <div class="feature-card">
+                    <h5><i class="fas fa-route me-2"></i>Route Details</h5>
+                    <p><strong>From:</strong> ${startPoint}</p>
+                    <p><strong>To:</strong> ${endPoint}</p>
+                    <p><strong>Date:</strong> ${new Date(travelDate).toLocaleDateString()}</p>
+                    <p><strong>Time:</strong> ${travelTime}</p>
+                    <hr>
+                    <h6>Recommended Route via Delhi-Mumbai Expressway:</h6>
+                    <ul>
+                        <li>Take local roads to nearest expressway entry point</li>
+                        <li>Enter Delhi-Mumbai Expressway</li>
+                        <li>Follow expressway signs and toll plazas</li>
+                        <li>Exit at appropriate point near destination</li>
+                        <li>Take local roads to final destination</li>
+                    </ul>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Travel Tips:</strong> Ensure FASTag is active, carry emergency contact numbers, 
+                        and check weather conditions before travel.
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('routeDetails').innerHTML = routeDetails;
+            document.getElementById('routeResult').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('routeResult').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
+
+        // Set minimum date to today for travel date input
+        document.getElementById('travelDate').min = new Date().toISOString().split('T')[0];
+
+        // Gallery image click handler
+        document.querySelectorAll('.gallery-img').forEach(img => {
+            img.addEventListener('click', function() {
+                // Create modal or lightbox effect
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                    cursor: pointer;
+                `;
+                
+                const modalImg = document.createElement('img');
+                modalImg.src = this.src;
+                modalImg.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    object-fit: contain;
+                `;
+                
+                modal.appendChild(modalImg);
+                document.body.appendChild(modal);
+                
+                modal.addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
+            });
+        });
+
+        // Add loading animation for forms
+        function showLoading(formId) {
+            const form = document.getElementById(formId);
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Calculating...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 1000);
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card, .stats-card, .amenity-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
